@@ -7,5 +7,5 @@ This only allows the News and Weather channels to work. You need to run the RiiC
 
 Run setup.sh and then run wc24.sh
 
-Does not automatically update so you have to run wc34.sh every time you want updated news and weather.
+Does not automatically update so you have to run wc24.sh every time you want updated news and weather.
 Here's some modifications to scripts  I wrote to do this on Linux before Riiconnect24 had Dolphin linux support.

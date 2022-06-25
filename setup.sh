@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir ~/.config/rc24
 clear
 
 #Set NAND Region
@@ -10,7 +11,7 @@ echo "2. E"
 echo "3. J"
 echo " "
 read -p "Choose NAND Region: " nand_region
-echo $nand_region > nand_region
+echo $nand_region > ~/.config/rc24/nand_region
 
 clear
 
@@ -26,7 +27,7 @@ echo "5. Italien"
 echo "6. Dutch"
 echo " "
 read -p "Choose Language: " weather_lang
-echo $weather_lang > weather_lang
+echo $weather_lang > ~/.config/rc24/weather_lang
 
 clear
 
@@ -62,7 +63,7 @@ echo "032: Haiti                    077: France"
 echo " "
 echo "You must type all 3 numbers. For example for Japan you have to type 001 not just 1"
 read -p "Choose Region: " weather_region
-echo $weather_region > weather_region
+echo $weather_region > ~/.config/rc24/weather_region
 
 clear
 
@@ -83,36 +84,48 @@ read -p "Choose Language: " news_lang
 #Write News Region to File
 if [ $news_lang -eq 0 ]
 then
-	echo 0_Japan > news_lang
+	echo 0_Japan > ~/.config/rc24/news_lang
 fi
 if [ $news_lang -eq 1 ]
 then
-	echo 1_America > news_lang
+	echo 1_America > ~/.config/rc24/news_lang
 fi
 if [ $news_lang -eq 2 ]
 then
-	echo 1_Europe > news_lang
+	echo 1_Europe > ~/.config/rc24/news_lang
 fi
 if [ $news_lang -eq 3 ]
 then
-	echo 2_Europe > news_lang
+	echo 2_Europe > ~/.config/rc24/news_lang
 fi
 if [ $news_lang -eq 4 ]
 then
-	echo 3_International > news_lang
+	echo 3_International > ~/.config/rc24/news_lang
 fi
 if [ $news_lang -eq 5 ]
 then
-	echo 4_International > news_lang
+	echo 4_International > ~/.config/rc24/news_lang
 fi
 if [ $news_lang -eq 6 ]
 then
-	echo 5_Europe > news_lang
+	echo 5_Europe > ~/.config/rc24/news_lang
 fi
 if [ $news_lang -eq 7 ]
 then
-	echo 6_Europe > news_lang
+	echo 6_Europe > ~/.config/rc24/news_lang
 fi
 
+clear
 
+#Add rc24 to PATH
 
+cp ./rc24 /home/deck/.config/rc24/rc24
+echo 'export PATH=$PATH:/home/deck/.config/rc24' >> ~/.bashrc
+
+#End
+
+echo "Setup Complete"
+echo " "
+echo "Please run rc24. It has been added to PATH so the command can be run anywhere."
+echo " "
+echo "The News and Forecast Channels do not automatically grab new info. You must run rc24.sh every time you want updated data."

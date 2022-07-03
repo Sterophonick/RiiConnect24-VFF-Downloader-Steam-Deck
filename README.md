@@ -7,6 +7,4 @@ This only allows the News and Weather channels to work. You need to run the RiiC
 
 ## Usage
 
-Run setup.sh and then run rc24
-
-Does not automatically update so you have to run rc24 every time you want updated news and weather.
+Run setup.sh and it creates a service (shoutouts to SteamDeckHomebrew) that will fetch new files every thirty minutes
